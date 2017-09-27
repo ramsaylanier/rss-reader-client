@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '@/components/Hello'
+import Home from '@/views/home'
+import FeedCreate from '@/components/feed/create/container'
+import FeedShow from '@/components/feed/show/container'
 
 Vue.use(Router)
 
@@ -8,8 +10,18 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Hello',
-      component: Hello
+      name: 'Home',
+      component: Home
+    },
+    {
+      path: '/create-feed',
+      name: 'CreateFeed',
+      component: FeedCreate
+    },
+    {
+      path: '/feed/:id',
+      name: 'FeedShow',
+      component: FeedShow
     }
   ]
 })
