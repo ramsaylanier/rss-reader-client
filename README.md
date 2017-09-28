@@ -1,6 +1,6 @@
 # rss-reader-client
 
-> A Vue.js project
+The client-side application used in conjunction with [RSS Reader Server](https://github.com/ramsaylanier/rss-reader-server). Ensure the server is running before running the client. 
 
 ## Build Setup
 
