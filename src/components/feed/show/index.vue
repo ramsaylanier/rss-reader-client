@@ -1,30 +1,34 @@
 <template>
   <article>
     <header :class="$style.header">
-      <h2 :class="$style.title">{{feed.title}}</h2>
-      <h3 :class="$style.description">{{feed.description}}</h3>
-      <div :class="$style.meta">
-        <div :class="$style.metaItem">language: <b>{{feed.language}}</b></div>
-        <div :class="$style.metaItem">last updated on: <b>{{formatDate(feed.updatedAt)}}</b></div>
+      <div :class="$style.wrapper">
+        <h2 :class="$style.title">{{feed.title}}</h2>
+        <h3 :class="$style.description">{{feed.description}}</h3>
+        <div :class="$style.meta">
+          <div :class="$style.metaItem">language: <b>{{feed.language}}</b></div>
+          <div :class="$style.metaItem">last updated on: <b>{{formatDate(feed.updatedAt)}}</b></div>
+        </div>
       </div>
     </header>
 
     <section :class="$style.feedItems">
-      <div :class="$style.feedItem" v-for="item in feed.items">
-        <div :class="$style.itemHeader">
-          <h3 :class="$style.itemTitle"><a :href="item.link" target="_blank">{{item.title}}</a></h3>
-          <div :class="$style.itemSubjects">
-            <ul :class="$style.subjectList">
-              <li :class="$style.subjectItem" v-for="subject in item.subject">
-                {{subject}}
-              </li>
-            </ul>
+      <div :class="$style.wrapper">
+        <div :class="$style.feedItem" v-for="item in feed.items">
+          <div :class="$style.itemHeader">
+            <h3 :class="$style.itemTitle"><a :href="item.link" target="_blank">{{item.title}}</a></h3>
+            <div :class="$style.itemSubjects">
+              <ul :class="$style.subjectList">
+                <li :class="$style.subjectItem" v-for="subject in item.subject">
+                  {{subject}}
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
 
 
-        <div :class="$style.itemBody">
-          <div :class="$style.itemDescription" v-html="item.description"></div>
+          <div :class="$style.itemBody">
+            <div :class="$style.itemDescription" v-html="item.description"></div>
+          </div>
         </div>
       </div>
     </section>
@@ -58,6 +62,7 @@
     padding: 3rem;
     border-bottom: 3px solid #F0433A;
   }
+
   .title{
     font-size: 3rem;
     margin: 0;
@@ -86,6 +91,11 @@
   .feedItems{
     padding: 3rem;
     background-color: #eee;
+  }
+
+  .wrapper{
+    max-width: 800px;
+    margin: 0 auto;
   }
 
   .feedItem{

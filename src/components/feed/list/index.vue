@@ -1,11 +1,14 @@
 <template>
   <div>
-    <router-link v-for="feed in feeds" :to="`/feed/` + feed.id" :class="$style.item">
-      <h3 :class="$style.description">{{feed.description}}</h3>
+    <div v-for="feed in feeds" :class="$style.item">
+      <h3 :class="$style.description">
+        <router-link :to="`/feed/` + feed.id">{{feed.description}}
+        </router-link>
+      </h3>
       <div :class="$style.body">
-        {{feed.url}}
+        <a :href="feed.url" target="_blank">{{feed.url}}</a>
       </div>
-    </router-link>
+    </div>
   </div>
 </template>
 
@@ -24,6 +27,10 @@ export default {
     &:not(last-of-type){
       margin-bottom: 2rem;
     }
+
+    a{
+      text-decoration: none;
+    }
   }
 
   .description{
@@ -33,9 +40,17 @@ export default {
     color: white;
     font-size: 1.5rem;
     font-weight: 100;
+
+    a{
+      color: white;
+    }
   }
 
   .body{
     padding: .5rem 2rem;
+
+    a{
+      color: #2E112D;
+    }
   }
 </style>

@@ -1,9 +1,11 @@
 <template>
   <div>
-    <custom-form
-    :inputs="inputs"
-    @handleSubmit="handleSubmit"
-    />
+    <div :class="$style.wrapper">
+      <custom-form
+      :inputs="inputs"
+      @handleSubmit="handleSubmit"
+      />
+    </div>
   </div>
 </template>
 
@@ -40,3 +42,11 @@ export default {
   }
 }
 </script>
+
+<style module>
+  .wrapper{
+    padding-top: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+</style>

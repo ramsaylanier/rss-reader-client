@@ -1,7 +1,7 @@
 <template>
   <header>
     <div class="wrapper">
-      <router-link to="/">Home</router-link>
+      <router-link to="/">Feeds</router-link>
       <router-link to="/create-feed">Create Feed</router-link>
     </div>
   </header>
