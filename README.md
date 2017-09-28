@@ -1,4 +1,4 @@
-# rssschema
+# rss-reader-client
 
 > A Vue.js project
 
